@@ -17,6 +17,7 @@ import {
   Text,
   useColorScheme,
   View,
+  LogBox,
 } from 'react-native';
 
 import {
@@ -31,6 +32,7 @@ const Section: React.FC<{
   title: string;
 }> = ({children, title}) => {
   const isDarkMode = useColorScheme() === 'dark';
+  // @refresh reset
   return (
     <View style={styles.sectionContainer}>
       <Text
@@ -61,6 +63,9 @@ const App = () => {
   const backgroundStyle = {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
   };
+
+  console.log('update');
+  LogBox.ignoreLogs(['warning: update']);
 
   return (
     <SafeAreaView style={backgroundStyle}>

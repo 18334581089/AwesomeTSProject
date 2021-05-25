@@ -37,3 +37,33 @@
 3. 返回一个class组件的情况
 - 强制重置
 > 在文件中添加`@refresh reset`
+
+#### 5/25
+- 试验:连接手机
+1. **手机确认打开开发者模式,并且usb可以进行文件管理,但是无法通过`adb devices` 获取**
+
+- 使用强制刷新
+1. **使用失败,无法证实使用方法正确**
+> > 已经添加了`// @refresh reset`
+
+- 接下来进入*调试*
+1. `To reload the app press "r"`(刷新)
+2. `To open developer menu press "d"`(打开开发者菜单)
+3. `LogBox`: 生产环境自动禁用
+```
+  import { LogBox } form 'react-native';
+  LogBox.ignoreLogs(['warning: ...']); // Ignore log notification by message: 忽略指定的日志
+  LogBox.ignoreAllLogs(); // Ignore all log notifications(忽略所有日志)
+```
+4. Chrome 开发者工具
+> 开发者菜单中选择`Debug JS Remotely`,开启谷歌开发调试(最好是localhost不是ip)
+5. `React Developer Tools`
+> 安装`react-devtools`
+> `npm install -g react -devools` 依赖electron
+> 安装完成后在命令行中执行react-devtools即可启动此工具：`react-devtools`
+> > 提示：如果你不想全局安装react-devtools，可以把它单独加入项目中。
+> > 用npm install --save-dev react-devtools命令把react-devtools包安装到你的项目中，
+> > 并在package.json的scripts中添加 "react-devtools": "react-devtools"，
+> > 接着在项目根目录下运行npm run react-devtools命令即可。
+
+- 看了调试,但是很多不是特别理解,也没有去做.
