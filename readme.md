@@ -67,3 +67,46 @@
 > > 接着在项目根目录下运行npm run react-devtools命令即可。
 
 - 看了调试,但是很多不是特别理解,也没有去做.
+
+#### 5/26
+- 使用第三方库
+> 大部分是英文，不是很了解，如果需要使用第三方，自行百度
+- 使用ts (已有项目添加ts)
+1. 
+```
+yarn add --dev typescript @types/jest @types/react @types/react-native @types/react-test-renderer
+# or for npm
+npm install --save-dev typescript @types/jest @types/react @types/react-native @types/react-test-renderer
+```
+2. 根目录添加tsconfig.json
+```
+{
+  "compilerOptions": {
+    "allowJs": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "isolatedModules": true,
+    "jsx": "react",
+    "lib": ["es6"],
+    "moduleResolution": "node",
+    "noEmit": true,
+    "strict": true,
+    "target": "esnext"
+  },
+  "exclude": [
+    "node_modules",
+    "babel.config.js",
+    "metro.config.js",
+    "jest.config.js"
+  ]
+}
+```
+3. 创建jest.config.js
+```
+module.exports = {
+  preset: 'react-native',
+  moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node']
+};
+```
+4. js改名ts（保留./index.js入口文件）
+5. 类型检验`yarn tsc`
