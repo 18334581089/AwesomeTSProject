@@ -110,3 +110,22 @@ module.exports = {
 ```
 4. js改名ts（保留./index.js入口文件）
 5. 类型检验`yarn tsc`
+
+####　5/27
+- 第三方库
+> `npm install react-native-webview`
+1. 尝试使用webview
+2. 发现无法启动项目(回复到昨天,重新启动)
+> > 报错内容:
+`Unable to load script.Make sure you're either running a metro server（ run 'react-native start' ） or that your bundle 'index.android.bundle' is packaged correctly for release.`
+***无法加载脚本。请确保您运行的是Metro服务器（运行'react-native start'）或者 您的软件包'index.android.bundle'已正确打包以供发布。***
+3. `https://blog.csdn.net/qq_36228442/article/details/92799579`
+> > 应该是版本问题
+> > 直接使用方法2不行(可能是因为版本问题, 原文是`0.59.4`版本)
+> > 方法1,本地无法把react-native作为可运行程序
+> > > 在前面增加yarn 才能执行(但也报错了,微博并没有解释这种情况)
+4. 过了
+- `npx react-native info`,查看当前版本的信息
+- 更新
+1. `React Native CLI`
+> > https://www.react-native.cn/docs/upgrading
