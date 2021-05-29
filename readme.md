@@ -129,3 +129,48 @@ module.exports = {
 - 更新
 1. `React Native CLI`
 > > https://www.react-native.cn/docs/upgrading
+
+#### 5/28
+- 重新启动 发现并无异常
+> 没有上次的报错
+1. 尝试再次安装 `webview` 包
+> `yarn add react-native-webview`
+> 再次执行`yarn android` 出现上次报错
+2. 关闭vs code,重新启动尝试
+> 通过 `npm scripts` 快速启动成功(没有报错)
+> 通过 `yarn android` 
+> > 启动成功没有报错
+> > 和启动没有太大关系看来就是需要vscode重新起动就好了
+- 记性
+> *index.android.bundle* 报错解决办法
+> > 再次确认,遇到这样的问题,需要重新启动vscode就可以
+> yarn 比 npm 要快一些
+- 更新
+2. 博客更新文章
+> `https://www.jianshu.com/p/ba0d68380906`
+> 通过官方推荐的升级助手
+> 最好不要直接在package中修改版本号,引起很多问题
+3. 手动升级
+> 已有的项目进行升级,可以init一个新项目,把代码拷过去
+> 可以省去很多第三方库的升级问题
+- 设计-样式
+> 当作react来写
+1. 行内样式建议写法
+> 使用`StyleSheet.creact`来写组件的样式
+> 疑问: 引入样式文件不好么?
+> 文档: react native 的样式都是写在js文件里面的
+> 文档: 和css有区别,不能使用'background-color'要使用驼峰
+2. 宽高
+> 文档: 宽高都是无单位的
+> 文档: `Dimensions` 这个对象用来获取设备宽高
+3. 布局
+> `Flexbox` 不同设备下的统一布局结构
+> > flexbox直接使用,flex的常用属性
+> > 默认值不同1:direction默认colum 2: flex只能赋值数字
+> > 和flex布局相似,
+> > 使用 Align Self
+4. 图片
+> 使用方法`require(./xxx.jpg)`
+> 和flutter一样,会对 文件后缀进行区别引入
+> > my-icon.ios.png和my-icon.android.png
+**webview 还没用**
