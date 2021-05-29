@@ -174,3 +174,18 @@ module.exports = {
 > 和flutter一样,会对 文件后缀进行区别引入
 > > my-icon.ios.png和my-icon.android.png
 **webview 还没用**
+
+#### 5/29
+- 图片
+> Packager 会大保所有图片,并且根据屏幕精度提供对应资源
+> iphone7会使用`check@2x.png`,7 plus会使用`check@3x.png`
+> 如果没有图片恰好满足屏幕分辨率,则会自动选中最接近的一个图片
+> 注意
+1. `require(string)`括号里面的值必须是字符串,不能写表达式
+2. 只有实际被require到的图片才会被打包
+3. 如果需要动态缩放图片,必须设置width:null和height:null(不理解)
+4. 网络图片需要设置宽高(加style)
+5. base64数据,`使用'data:'格式来显示图片`,并且手动设置图片的尺寸
+6. 背景图片组件`<ImageBackground source={...} style={{width: '100%', height: '100%'}}>`
+*metro(即packager)配置文件*
+*require可以引入的其他文件: 声音、视频或者文档文件*

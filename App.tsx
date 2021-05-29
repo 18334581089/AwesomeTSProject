@@ -58,6 +58,8 @@ const Section: React.FC<{
   );
 };
 
+const icon = require('./myIcon.jpg');
+
 const App = () => {
   const isDarkMode = useColorScheme() === 'dark';
 
@@ -96,7 +98,10 @@ const App = () => {
           <LearnMoreLinks />
         </View> */}
         <View>
-          <Image source={require('./myIcon.jpg')} />
+          <Image
+            source={icon}
+            style={{width: 400, height: 400}}
+          />
         </View>
       </ScrollView>
     </SafeAreaView>
