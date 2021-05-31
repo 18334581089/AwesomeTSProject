@@ -19,6 +19,11 @@ import {
   useColorScheme,
   View,
   LogBox,
+  Button,
+  TouchableHighlight,
+  TouchableOpacity,
+  TouchableWithoutFeedback,
+  Alert,
 } from 'react-native';
 
 import {
@@ -31,7 +36,7 @@ import {
 
 const Section: React.FC<{
   title: string;
-}> = ({children, title}) => {
+}> = ({ children, title }) => {
   const isDarkMode = useColorScheme() === 'dark';
   // @refresh reset
   return (
@@ -98,15 +103,48 @@ const App = () => {
           <LearnMoreLinks />
         </View> */}
         <View>
-          <Image
-            source={icon}
-            style={{width: 400, height: 400}}
+          <Image source={icon} style={imgStyle.img} />
+        </View>
+        <View>
+          <Button
+            onPress={() => {
+              Alert.alert('你点了按钮!');
+            }}
+            title="点我！"
+            color="#841584"
           />
+        </View>
+        <View>
+          <TouchableHighlight
+            onPress={() => {
+              Alert.alert('You long-pressed the button1!');
+            }}
+            underlayColor="white">
+            <Text>TouchableHighlight</Text>
+          </TouchableHighlight>
+          <TouchableOpacity
+            onPress={() => {
+              Alert.alert('You long-pressed the button2!');
+            }}>
+            <Text>TouchableOpacity</Text>
+          </TouchableOpacity>
+          <TouchableWithoutFeedback
+            onPress={() => {
+              Alert.alert('You long-pressed the button3!');
+            }}>
+            <Text>TouchableWithoutFeedback</Text>
+          </TouchableWithoutFeedback>
         </View>
       </ScrollView>
     </SafeAreaView>
   );
 };
+const imgStyle = StyleSheet.create({
+  img: {
+    width: 400,
+    height: 400,
+  },
+});
 
 const styles = StyleSheet.create({
   sectionContainer: {

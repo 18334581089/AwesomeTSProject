@@ -189,3 +189,20 @@ module.exports = {
 6. 背景图片组件`<ImageBackground source={...} style={{width: '100%', height: '100%'}}>`
 *metro(即packager)配置文件*
 *require可以引入的其他文件: 声音、视频或者文档文件*
+
+#### 5/31
+- 颜色
+> React Native 支持 rgb() 和 rgba() 两种十六进制与函数方法
+> 支持 hsl() 和 hsla() 函数方法：
+> transparent
+- 交互
+***终于要开始写组件了***
+1. `Button`
+2. `Touchable`系列组件
+> 特点: 样式固定(如果需要自定义使用: `TouchableOpacity`/`TouchableNativeFeedback`)
+> 
+> > `TouchableHighlight` 点击背景变色
+> > `TouchableOpacity` 点击字体变色
+> > `TouchableWithoutFeedback` 不显示任何视觉反馈
+> > `TouchableNativeFeedback` 安卓下涟漪效果
+> > `onLongPress` 属性上述组件都可以用
