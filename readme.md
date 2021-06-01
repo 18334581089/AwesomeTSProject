@@ -206,3 +206,22 @@ module.exports = {
 > > `TouchableWithoutFeedback` 不显示任何视觉反馈
 > > `TouchableNativeFeedback` 安卓下涟漪效果
 > > `onLongPress` 属性上述组件都可以用
+
+#### 6/1
+- 导航
+> React Navigation
+> > 原生视图
+> > 性能优秀
+> > 动画方便
+> 并没有说明用法,需要自己去官方查看
+> > 地址: https://reactnavigation.org/
+- 动画
+1. 必要性: 流畅有意义的动画对于移动端用户体验非常重要.现实生活中的惯性,可以通过动画实现
+2. 介绍: react native 提供了两个互补的系统
+> 用于精细动画的Animated
+> 全局动画的LayoutAnmated
+3. 复制第一个示例,
+** 报错: Delete `␍`**
+> 表示 行尾换行符不正确`手动把CRLF换成LF`就好了
+> > 使用`yarn run lint --fix`(或者全局替换:目前没有找到替换的方法,需要学习editorconfig)
+> > 动画还差一点就实现了

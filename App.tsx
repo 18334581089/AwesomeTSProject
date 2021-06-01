@@ -33,10 +33,11 @@ import {
   LearnMoreLinks,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
+import Animated1 from './src/animated';
 
 const Section: React.FC<{
   title: string;
-}> = ({ children, title }) => {
+}> = ({children, title}) => {
   const isDarkMode = useColorScheme() === 'dark';
   // @refresh reset
   return (
@@ -135,14 +136,15 @@ const App = () => {
             <Text>TouchableWithoutFeedback</Text>
           </TouchableWithoutFeedback>
         </View>
+        <Animated1 />
       </ScrollView>
     </SafeAreaView>
   );
 };
 const imgStyle = StyleSheet.create({
   img: {
-    width: 400,
-    height: 400,
+    width: 200,
+    height: 200,
   },
 });
 
