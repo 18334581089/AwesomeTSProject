@@ -225,3 +225,13 @@ module.exports = {
 > 表示 行尾换行符不正确`手动把CRLF换成LF`就好了
 > > 使用`yarn run lint --fix`(或者全局替换:目前没有找到替换的方法,需要学习editorconfig)
 > > 动画还差一点就实现了
+
+#### 6/2
+- 继续动画
+1. 警告解除
+> > **`useNativeDriver` is not supported **
+> > 简单实现了渐变效果,
+> > toValue设置最终值(Animated.Value(x),x为初始值),
+> > duration为持续时间
+> > Easing 它的作用是来设置我们要动画改变的value要以什么状态来改变
+> > > 默认: easeInOut 曲线传达一个对象的逐渐加速到全速，最后逐渐减速到停止。

@@ -1,12 +1,15 @@
 import React, {useRef} from 'react';
-import {Animated, StyleSheet, Text, View} from 'react-native';
+import {Animated, Easing, StyleSheet, Text, View} from 'react-native';
 
 const FadeInView = (props: any) => {
-  const fadeAnim = useRef(new Animated.Value(0)).current;
+  const v = new Animated.Value(0.2);
+  const fadeAnim = useRef(v).current;
   React.useEffect(() => {
     let data: any = {
       toValue: 1,
-      duration: 10000,
+      duration: 1000,
+      easing: Easing.back(0.2),
+      usenativedriver: true, // 不设置会报错
     };
     Animated.timing(fadeAnim, data).start();
   }, [fadeAnim]);
@@ -14,11 +17,18 @@ const FadeInView = (props: any) => {
     style1: {
       width: 250,
       height: 50,
-      backgroundColor: 'powderblue',
+      backgroundColor: 'red',
+      // fontSize: fadeAnim,
     },
   });
   return (
-    <Animated.View style={StyleSheet2.style1}>{props.children}</Animated.View>
+    <Animated.View
+      style={{
+        ...StyleSheet2.style1,
+        opacity: fadeAnim,
+      }}>
+      {props.children}
+    </Animated.View>
   );
 };
 
