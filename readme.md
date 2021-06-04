@@ -235,3 +235,21 @@ module.exports = {
 > > duration为持续时间
 > > Easing 它的作用是来设置我们要动画改变的value要以什么状态来改变
 > > > 默认: easeInOut 曲线传达一个对象的逐渐加速到全速，最后逐渐减速到停止。
+
+#### 6/4
+- 继续动画
+1. 这一过程经过特别优化，执行效率会远高于反复调用setState和多次重渲染。
+- `Animated.timing()` 最常用的动画, 推动一个值按照一个缓动曲线而随时间变化
+> > 默认加速在减速
+2. 组合动画
+> > `Animated.parallel` `Animated.sequence` `Animated.stagger` `Animated.delay`
+> >　示例
+> > 如果有一个动画发生停止中断,其他的动画也会被中断
+***项目无法启动***
+1. 报错: `system ui isn't responding`
+> > 执行: 把虚拟机数据清空`wipe data`
+> > 重新启动 android 报错,(模拟器没有提示,控制台报错)
+> > *Failed to install the app. Make sure you have the Android development environment set up:*
+> > 重新启动 ,没有控制台报错,模拟器上爆红
+> > 貌似端口被占用的原因
+> > 重启成功

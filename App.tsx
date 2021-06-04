@@ -34,6 +34,7 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 import Animated1 from './src/animated';
+import Animated2 from './src/animated/combination';
 
 const Section: React.FC<{
   title: string;
@@ -137,6 +138,7 @@ const App = () => {
           </TouchableWithoutFeedback>
         </View>
         <Animated1 />
+        <Animated2 />
       </ScrollView>
     </SafeAreaView>
   );
