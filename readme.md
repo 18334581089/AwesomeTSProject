@@ -272,3 +272,77 @@ module.exports = {
 - 响应当前的动画值(获取当前动画的值 具体查看官网)
 > spring.stopAnimation(callback)
 > spring.addListener(callback)
+
+#### 6/6
+- 手势响应系统
+***用户的一次触摸操作的真实意图是什么，App 要经过好几个阶段才能判断。***
+1. 原生和 web app 得体验上,触摸响应就是一个关键因素
+2. 一般操作: 
+> 反馈/高亮- 用户看到按到了啥,松开手后会发生什么
+> 取消功能- 当用户正在触摸操作时，应该是可以通过把手指移开来终止操作
+- `TouchableHighlight` 和 `Touchable` 组件
+1. 响应者
+> `Touchable` 抽象响应系统,处理触控
+> `onStartShouldSetResponder`
+> > `View.props.onStartShouldSetResponder: (evt) => true,`开始触摸时,返回是否成为响应者
+> > `View.props.onMoveShouldSetResponder: (evt) => true,`开始移动时,是否愿意响应触摸交互呢(不是view得情况)
+**这一块有点不好消化, 目的只是了解, 后期再慢慢来**
+
+- js运行环境
+- 定时器
+1. `InteractionManager` 执行需要长时间同步执行的任务(会等到当前所有得交互和动画执行完,再去执行)
+2. `setImmediate` `requestAnimationFrame`
+- 网络
+1. `Fetch`
+> 如果你之前使用过XMLHttpRequest(即俗称的 ajax)或是其他的网络 API，那么 Fetch 用起来将会相当容易上手
+```
+fetch('https://mywebsite.com/endpoint/', {
+  method: 'POST',
+  headers: {
+    Accept: 'application/json',
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify({
+    firstParam: 'yourValue',
+    secondParam: 'yourOtherValue'
+  })
+});
+```
+```
+async function getMoviesFromApi() {
+  try {
+    // 注意这里的await语句，其所在的函数必须有async关键字声明
+    let response = await fetch(
+      'https://facebook.github.io/react-native/movies.json'
+    );
+    let responseJson = await response.json();
+    return responseJson.movies;
+  } catch (error) {
+    console.error(error);
+  }
+}
+```
+> `WebSocket` 支持
+```
+const ws = new WebSocket('ws://host.com/path');
+
+ws.onopen = () => {
+  // connection opened
+  ws.send('something'); // send a message
+};
+
+ws.onmessage = (e) => {
+  // a message was received
+  console.log(e.data);
+};
+
+ws.onerror = (e) => {
+  // an error occurred
+  console.log(e.message);
+};
+
+ws.onclose = (e) => {
+  // connection closed
+  console.log(e.code, e.reason);
+};
+```
